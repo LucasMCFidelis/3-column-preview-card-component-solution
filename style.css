@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root{
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --Transparent-white: hsla(0, 0%, 100%, 0.75);   /*(paragraphs)*/
+    --Very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-size: 15px;
+    background-color: var(--Very-light-gray);
+    padding: 170px 260px 128px;
+    text-align: left;
+    font-family: 'Lexend Deca';
+    font-weight: 400;
+    color: var(--Very-light-gray);
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    height: 502px;
+    width: 920px;
+    display: grid;
+    grid-template-columns: repeat(3, 306px);
+    margin: 0 auto;
+}
+
+#number-1 {
+    background-color: var(--Bright-orange);
+}
+
+#number-2 {
+    background-color: var(--Dark-cyan);
+}
+
+#number-3 {
+    background-color: var(--Very-dark-cyan);
+}
+
+.card{
+    height: 502px;
+    padding: 48px 50px 48px 45px;
+}
+
+.card .title{
+    font-family: 'Big Shoulders Display';
+    font-weight: 700;
+    font-size: 42px;
+    text-transform: uppercase;
+    color: var(--Very-light-gray);
+    margin-top: 38px;
+}
+
+.card .paragraph{
+    color: var(--Transparent-white);
+    line-height: 22px;
+    margin-top: 38px;
+    margin-bottom: 85px;
+}
+
+.card .botao{
+    width: 146px;
+    height: 48px;
+    
+}
+
+.card .botao button{
+    width: 100%;
+    height: 100%;
+    background-color: var(--Very-light-gray);
+    border-radius: 24px;
+    border: 2px solid var(--Very-light-gray);
+    text-transform: capitalize;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.botao a{
+    width: 100%;
+    height: 100%;
+}
+
+#number-1 .botao button{
+    color: var(--Bright-orange);
+}
+
+#number-2 .botao button{
+    color: var(--Dark-cyan);
+}
+
+#number-3 .botao button{
+    color: var(--Very-dark-cyan);
+}
+
+.card .botao #botao_learn_more:hover{
+    color: white;
+    background-color: rgba(240, 248, 255, 0);
+    
+}
+
+@media only screen and (max-width: 760px){
+    body{
+        width: 100vw;
+        height: auto;
+        padding: 0px;
+        justify-content: center;
+    }
+
+    .container{
+        width: auto;
+        margin: 88px 24px;
+        height: auto;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: 380px 400px 380px; 
+        gap: 0px;
+    }
+
+    .container .card{
+        width: 100%;
+        height: 380px;
+        padding: 25px 20px 0px 35px;
+    }
+
+    .container .card#number-2{ 
+        height: 400px;
+    }
+
+    .container .card .paragraph{
+        margin-bottom: 28px;
+    }
+}
