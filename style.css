@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
 
-:root{
+:root {
     --Bright-orange: hsl(31, 77%, 52%);
     --Dark-cyan: hsl(184, 100%, 22%);
     --Very-dark-cyan: hsl(179, 100%, 13%);
-    --Transparent-white: hsla(0, 0%, 100%, 0.75);   /*(paragraphs)*/
+    --Transparent-white: hsla(0, 0%, 100%, 0.75); /*(paragraphs)*/
     --Very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
     font-size: 15px;
     background-color: var(--Very-light-gray);
@@ -28,7 +28,7 @@ body{
     align-items: center;
 }
 
-.container{
+.container {
     height: 502px;
     width: 920px;
     display: grid;
@@ -36,100 +36,97 @@ body{
     margin: 0 auto;
 }
 
+.card {
+    height: 502px;
+    padding: 48px 50px 48px 45px;
+
+    & .title {
+        font-family: 'Big Shoulders Display';
+        font-weight: 700;
+        font-size: 42px;
+        text-transform: uppercase;
+        color: var(--Very-light-gray);
+        margin-top: 38px;
+    }
+
+    & .paragraph {
+        color: var(--Transparent-white);
+        line-height: 22px;
+        margin-top: 38px;
+        margin-bottom: 85px;
+    }
+
+    & .botao_learn_more {
+        width: 146px;
+        height: 48px;
+        background-color: var(--Very-light-gray);
+        border-radius: 24px;
+        border: none;
+        text-transform: capitalize;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 1s;
+    }
+}
+
 #number-1 {
     background-color: var(--Bright-orange);
+
+    & .botao_learn_more:not(:hover) {
+        color: var(--Bright-orange);
+    }
 }
 
 #number-2 {
     background-color: var(--Dark-cyan);
+
+    & .botao_learn_more:not(:hover) {
+        color: var(--Dark-cyan);
+    }
 }
 
 #number-3 {
     background-color: var(--Very-dark-cyan);
+
+    & .botao_learn_more:not(:hover) {
+        color: var(--Very-dark-cyan);
+    }
 }
 
-.card{
-    height: 502px;
-    padding: 48px 50px 48px 45px;
-}
-
-.card .title{
-    font-family: 'Big Shoulders Display';
-    font-weight: 700;
-    font-size: 42px;
-    text-transform: uppercase;
-    color: var(--Very-light-gray);
-    margin-top: 38px;
-}
-
-.card .paragraph{
-    color: var(--Transparent-white);
-    line-height: 22px;
-    margin-top: 38px;
-    margin-bottom: 85px;
-}
-
-
-.card .botao_learn_more{
-    width: 146px;
-    height: 48px;
-    background-color: var(--Very-light-gray);
-    border-radius: 24px;
-    border: 2px solid var(--Very-light-gray);
-    text-transform: capitalize;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 1s;
-}
-
-#number-1 .botao_learn_more:not(:hover){
-    color: var(--Bright-orange);
-}
-
-#number-2 .botao_learn_more:not(:hover){
-    color: var(--Dark-cyan);
-}
-
-#number-3 .botao_learn_more:not(:hover){
-    color: var(--Very-dark-cyan);
-}
-
-.card .botao_learn_more:hover{
+.card .botao_learn_more:hover {
     color: white;
     background-color: rgba(240, 248, 255, 0);
+    border: 2px solid var(--Very-light-gray);
 }
 
-@media only screen and (max-width: 760px){
-    body{
+@media only screen and (max-width: 760px) {
+    body {
         width: 100vw;
         height: auto;
-        padding: 0px;
+        padding: 0;
+        display: flex;
         justify-content: center;
     }
 
-    .container{
-        width: auto;
-        margin: 88px 24px;
+    .container {
+        width: 100%;
+        margin: 15vh 5vw;
         height: auto;
         display: grid;
         justify-items: center;
         align-items: center;
-        grid-template-columns: repeat(1, 300px);
-        grid-template-rows: 380px 400px 380px; 
-        gap: 0px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
     }
 
-    .container .card{
+    .container .card {
         width: 100%;
-        height: 380px;
-        padding: 25px 20px 0px 35px;
+        height: auto;
+        padding: 3rem 2rem 3rem 3.5rem;
     }
 
-    .container .card#number-2{ 
-        height: 400px;
-    }
-
-    .container .card .paragraph{
-        margin-bottom: 28px;
+    .container .card .paragraph {
+        margin-bottom: 1.75rem;
+        width: clamp(60%, 70%, 80%);
     }
 }
